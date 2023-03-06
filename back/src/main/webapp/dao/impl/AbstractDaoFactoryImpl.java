@@ -1,9 +1,6 @@
 package main.webapp.dao.impl;
 
-import main.webapp.dao.api.AbstractDaoFactory;
-import main.webapp.dao.api.ConnectionBuilder;
-import main.webapp.dao.api.ConnectionBuilderFactory;
-import main.webapp.dao.api.UserDao;
+import main.webapp.dao.api.*;
 
 public class AbstractDaoFactoryImpl implements AbstractDaoFactory {
     @Override
@@ -15,7 +12,7 @@ public class AbstractDaoFactoryImpl implements AbstractDaoFactory {
     }
 
     @Override
-    public PostDaoImpl getPostDao() {
+    public PostDao getPostDao() {
         PostDaoImpl dao = new PostDaoImpl();
         ConnectionBuilder cb = ConnectionBuilderFactory.getConnectionBuilder();
         dao.setConnectionBuilder(cb);
@@ -23,7 +20,7 @@ public class AbstractDaoFactoryImpl implements AbstractDaoFactory {
     }
 
     @Override
-    public PostCommentDaoImpl getPostCommentDao() {
+    public PostCommentDao getPostCommentDao() {
         PostCommentDaoImpl dao = new PostCommentDaoImpl();
         ConnectionBuilder cb = ConnectionBuilderFactory.getConnectionBuilder();
         dao.setConnectionBuilder(cb);
@@ -31,7 +28,7 @@ public class AbstractDaoFactoryImpl implements AbstractDaoFactory {
     }
 
     @Override
-    public PostLikeDaoImpl getPostLikeDao() {
+    public PostLikeDao getPostLikeDao() {
         PostLikeDaoImpl dao = new PostLikeDaoImpl();
         ConnectionBuilder cb = ConnectionBuilderFactory.getConnectionBuilder();
         dao.setConnectionBuilder(cb);

@@ -30,7 +30,7 @@ public class ConnectionBuilderImpl implements ConnectionBuilder {
     }
 
     @Override
-    public Connection getConnection() throws SQLException, ClassNotFoundException {
+    public Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url, login, password);
     }
 }
