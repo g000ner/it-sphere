@@ -15,6 +15,16 @@ public class Post {
     private Date date;
     private Date created;
 
+    private Date published;
+
+    public Date getPublished() {
+        return published;
+    }
+
+    public void setPublished(Date published) {
+        this.published = published;
+    }
+
     public Integer getId() {
         return id;
     }
