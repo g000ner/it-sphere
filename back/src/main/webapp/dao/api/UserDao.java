@@ -12,5 +12,5 @@ public interface UserDao {
     User getUserById(Integer id) throws UserDaoException;
     void updateUser(User user) throws UserDaoException;
 
-    void changeUserRole(Integer userId, UserRole newRole);
+    void changeUserRole(Integer userId, UserRole newRole) throws UserDaoException;
 }

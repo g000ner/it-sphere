@@ -72,7 +72,7 @@ public class PostLikeDaoImpl implements PostLikeDao {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            throw new PostLikeDaoException();
+            throw new PostLikeDaoException(e);
         }
         return result;
     }

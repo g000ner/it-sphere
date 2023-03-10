@@ -24,6 +24,7 @@ public class UserDaoImpl implements UserDao {
             "(user_login, user_password,  user_role, avatar_url, user_name, about, post_count) " +
             "VALUES (?, ?, ?, ?, ?, ?, ?)";
 
+    private static final String UPDATE_ROLE = "UPDATE its_user SET user_role=? WHERE user_id=?";
     private static final String UPDATE = "UPDATE its_user SET " +
             "user_login=?, user_password=?, user_role=?, avatar_url=?, user_name=?, about=?, post_count=? WHERE user_id=?";
 
@@ -152,7 +153,21 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public void changeUserRole(Integer userId, UserRole newRole) {
-        // TODO changeUserRole
+    public void changeUserRole(Integer userId, UserRole newRole) throws UserDaoException {
+        try {
+            Connection connection = getConnection();
+            try {
+                PreparedStatement statement = connection.prepareStatement(UPDATE_ROLE);
+                statement.setString(1, newRole.name());
+                statement.setInt(2, userId);
+                statement.executeUpdate();
+                statement.close();
+            } finally {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            throw new UserDaoException(e);
+        }
     }
 }
