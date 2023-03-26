@@ -1,0 +1,75 @@
+// реализация flexbox-сеток на sass
+
+$mobile: 'screen and (max-width: 599px)';
+$mobile-min: 'screen and (min-width: 320px)';
+$mobile-interval: '(min-width: 320px) and (max-width: 599px)';
+
+$tablet: 'screen and (max-width: 1023px)';
+$tablet-min: 'screen and (min-width: 600px)';
+$tablet-interval: '(min-width: 600px) and (max-width: 1023px)';
+
+$desktop-min: 'screen and (min-width: 1024px)';
+$desktop-lg-min: 'screen and (min-width: 1360px)';
+
+@mixin generate-columns($infix, $n, $padding, $i: 1) {
+  @for $i from 1 through $n {
+    @if $infix {
+      &_#{$infix}-#{$i} {
+        width: calc($i * 100% / $n);
+        padding-left: $padding;
+        padding-right: $padding;
+        box-sizing: border-box;
+      }
+    } @else {
+      &-#{$i} {
+        width: calc($i * 100% / $n);
+        padding-left: $padding;
+        padding-right: $padding;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+
+  // @media #{$mobile} {
+  //   margin-left: -4px;
+  //   margin-right: -4px;
+  // }
+
+  // @media #{$tablet-interval} {
+  //   margin-left: -8px;
+  //   margin-right: -8px;
+  // }
+
+  // @media #{$desktop-min} {
+  //   margin-left: -16px;
+  //   margin-right: -16px;
+  // }
+}
+
+.col {
+  @include generate-columns(null, 12, 30px);
+  // @include generate-columns(md, 12, 24px);
+
+  // @media #{$mobile} {
+  //   @include generate-columns(xs, 12, 4px);
+  // }
+
+  // @media #{$tablet-interval} {
+  //   @include generate-columns(sm, 12, 8px);
+  // }
+
+  // @media #{$desktop-min} {
+  //   @include generate-columns(md, 12, 16px);
+  // }
+}
+.container {
+  max-width: 1200px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}

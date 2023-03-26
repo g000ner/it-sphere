@@ -1,0 +1,125 @@
+.CardBox{
+    display: flex;
+    justify-content: center;
+
+    .Card{
+        background-color:#fff;
+        width: 540px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+.Start{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 12px;
+
+    .Author{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        .imgBox{
+            margin-left: 30px;
+            .Avatar{
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .Name{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 14px;
+
+            margin-left: 8px;
+        }
+    }
+    .Date{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
+        color: #5C5C5C;
+
+        margin-right: 30px;
+    }
+}
+
+.Label{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+
+    margin: 16px 8px 8px 30px;
+}
+.Text{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    margin: 0 30px;
+}
+.End{
+    display: flex;
+    justify-content: space-between;
+    margin: 16px 30px;
+
+    .ReadMore{
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .ReadMore:hover{
+        color: #0F4DA8;
+    }
+    .Reaction{
+        display: flex;
+    }
+    .Reaction button {
+        cursor: pointer;
+        background-color: #fff;
+      }
+
+      .Reaction svg {
+        width: 20px;
+        height: 20px;
+        color: #000;
+      }
+      
+      .Reaction svg:hover {
+        color: #0F4DA8;
+      }
+
+      .Like{
+        display: flex;
+        margin-right: 8px;
+        .LikeCount{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            margin-left: 2px;
+        }
+      }
+
+      .Comment{
+        display: flex;
+        .CommentCount{
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            margin-left: 2px;
+        }
+      }
+}
