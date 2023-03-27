@@ -1,0 +1,77 @@
+.RegistrationBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+
+    .Registration{
+        width: 536px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+    }
+}
+
+.Title{
+    margin-top: 30px;
+    margin-left: 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+}
+.Form {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  
+    .FormName {
+      margin: 10px 0 6px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  
+    &__input {
+      padding: 12px;
+      background: #ecf1f7;
+      border-radius: 8px;
+      border-width: 0;
+      margin-right: 30px;
+    }
+  }
+  .AddUser{
+    margin: 30px 25% 30px 25%;
+    width: 260px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: #6A94D3;
+    border-radius: 8px;
+  }
+  .Entry{
+    width: 536px;
+    height: 46px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .Text{
+      display: flex;
+      .EntryGo{
+        margin-left: 4px;
+        cursor: pointer;
+        color: #0F4DA8;
+        background-color: #FFFFFF;
+      }
+    }
+  }
