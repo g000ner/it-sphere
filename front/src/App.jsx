@@ -7,6 +7,7 @@ import Registration from "./pages/ registration";
 import Entry from "./pages/ entry";
 import PostPage from "./pages/post";
 import Profile from "./pages/profile";
+import NewPost from "./pages/new-post";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route exact path="/entry" element={<Entry />} />
             <Route exact path="/post" element={<PostPage />} />
             <Route exact path="/profile" element={<Profile />} />
+            <Route exact path="/new-post" element={<NewPost/>} />
           </Routes>
         </Router>
       </div>
