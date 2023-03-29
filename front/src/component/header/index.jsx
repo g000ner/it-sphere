@@ -1,7 +1,6 @@
-import style from './style.module.scss';
-import logo from './logo.png'
-import {UserOutlined } from '@ant-design/icons';
-
+import style from "./style.module.scss";
+import logo from "./logo.png";
+import { UserOutlined } from "@ant-design/icons";
 
 export const Header = () => {
   return (
@@ -9,9 +8,9 @@ export const Header = () => {
       <div className={style.boxLogo}>
         <img className={style.Logo} src={logo}></img>
       </div>
-      
+
       <div className={style.User}>
-        <UserOutlined/>
+        <UserOutlined />
         <div className={style.Exit}>Войти</div>
       </div>
     </header>

@@ -1,16 +1,16 @@
-import React from 'react';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import style from './style.module.scss'
-import { Header } from './component/header';
-import Layout from './pages/layout';
-import Registration from './pages/ registration';
-import Entry from './pages/ entry';
-import PostPage from './pages/post';
-import Profile from './pages/profile';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import style from "./style.module.scss";
+import { Header } from "./component/header";
+import Layout from "./pages/layout";
+import Registration from "./pages/ registration";
+import Entry from "./pages/ entry";
+import PostPage from "./pages/post";
+import Profile from "./pages/profile";
 
 function App() {
   return (
-    <div >
+    <div>
       <div className={style.Container}>
         <Header />
         <Router>
@@ -22,7 +22,7 @@ function App() {
             <Route exact path="/profile" element={<Profile />} />
           </Routes>
         </Router>
-    </div>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,182 @@
+.ProfilePage {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 20%;
+  margin-right: 15%;
+  margin-top: 30px;
+  .ProfileBox {
+    width: 730px;
+    min-height: 260px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+
+    .ProfileFirstBox {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .InfoBox {
+    min-width: 157px;
+    height: 150px;
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+}
+
+.Profile {
+  padding: 30px;
+  display: flex;
+
+  .imgBox {
+    .Avatar {
+      height: 100px;
+    }
+  }
+  .TextInfo {
+    margin-left: 40px;
+    .Name {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 23px;
+    }
+    .JobTitle {
+      margin-top: 20px;
+
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+  .Status {
+  }
+}
+.EditIcon {
+  padding: 20px;
+  cursor: pointer;
+}
+
+.Menu {
+  display: flex;
+  border-bottom: #0f4da8 solid;
+
+  .TitleMenu {
+    margin-left: 30px;
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #0f4da8;
+
+    cursor: pointer;
+  }
+}
+.Content {
+  display: flex;
+  justify-content: space-between;
+}
+.NamePost {
+  margin: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+}
+.Reaction {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px;
+}
+.Reaction button {
+  cursor: pointer;
+  background-color: #fff;
+}
+
+.Reaction svg {
+  width: 20px;
+  height: 20px;
+  color: #000;
+}
+.Like {
+  display: flex;
+  margin-left: 8px;
+  .LikeCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 2px;
+  }
+}
+.CommentIcon {
+  display: flex;
+  .CommentCount {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 2px;
+  }
+}
+
+.Info {
+  margin: 10px;
+  .Title {
+    margin-bottom: 10px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+
+    color: #0f4da8;
+  }
+  .InfoBlock {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    .Headline {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 14px;
+    }
+    .CountPost {
+      margin-left: 8px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
+}
+
+.WritePost{
+    margin-left: 40%;
+    margin-bottom: 10px;
+
+    cursor: pointer;
+    color: #ffffff;
+    padding: 10px;
+    background: #6A94D3;
+    border-radius: 10px;
+
+}
