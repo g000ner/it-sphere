@@ -41,11 +41,6 @@ public class UserController {
         return userPosts;
     }
 
-    @PostMapping
-    public void registerNewUser(@RequestBody User user) {
-        this.userService.registerNewUser(user);
-    }
-
     @PutMapping("{id}")
     public void updateUser(@PathVariable("id") Long id, @RequestBody User user) {
         this.userService.updateUser(id, user.getLogin(), user.getPassword(), user.getRole(), user.getAvatarUrl(),
