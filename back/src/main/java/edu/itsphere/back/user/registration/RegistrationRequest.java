@@ -1,15 +1,47 @@
 package edu.itsphere.back.user.registration;
 
-import lombok.*;
-
-@Getter
-@Setter
-@AllArgsConstructor
-@EqualsAndHashCode
-@ToString
 public class RegistrationRequest {
     private String login;
     private String password;
     private String name;
     private String about;
+
+    public RegistrationRequest(String login, String password, String name, String about) {
+        this.login = login;
+        this.password = password;
+        this.name = name;
+        this.about = about;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
 }

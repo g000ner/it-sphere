@@ -1,11 +1,9 @@
 package edu.itsphere.back.user.registration;
 
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@AllArgsConstructor
 @RequestMapping(path = "api/v1/registration")
 public class RegistrationController {
     @Autowired

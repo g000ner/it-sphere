@@ -6,7 +6,6 @@ import edu.itsphere.back.user.UserRole;
 import edu.itsphere.back.user.UserService;
 import edu.itsphere.back.user.registration.token.ConfirmationToken;
 import edu.itsphere.back.user.registration.token.ConfirmationTokenService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +14,6 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
 public class RegistrationService {
     @Autowired
     private EmailValidator emailValidator;
@@ -60,8 +58,8 @@ public class RegistrationService {
             throw new IllegalStateException("token expired");
         }
 
-        confirmationTokenService.setConfirmedAt(token); // TODO написать подтверждение токена в confirmationTokenService
-        userService.enableUser(confirmationToken.getUser().getLogin()); // TODO написать "включение" юзера
+        confirmationTokenService.setConfirmedAt(token);
+        userService.enableUser(confirmationToken.getUser().getLogin());
 
         return "confirmed";
     }

@@ -1,8 +1,8 @@
 package edu.itsphere.back.user;
 
+import edu.itsphere.back.user.fake.FakeUserRepository;
 import edu.itsphere.back.user.registration.token.ConfirmationToken;
 import edu.itsphere.back.user.registration.token.ConfirmationTokenService;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -17,12 +17,12 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Service
-@AllArgsConstructor
 public class UserService implements UserDetailsService {
     private static final String USER_NOT_FOUND_BY_LOGIN_MSG = "user with login %s not found";
 
     @Autowired
     UserRepository userRepository;
+//    FakeUserRepository<User, Long> userRepository;
     @Autowired
     BCryptPasswordEncoder passwordEncoder;
     @Autowired
