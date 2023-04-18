@@ -1,10 +1,13 @@
 package edu.itsphere.back.user;
 
+import edu.itsphere.back.exception.UserLoginTakenException;
+import edu.itsphere.back.exception.UserNotFoundException;
 import edu.itsphere.back.post.Post;
 import edu.itsphere.back.post.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -25,25 +28,27 @@ public class UserController {
 
     @GetMapping("{id}")
     public ResponseEntity<User> getUser(@PathVariable("id") Long id) {
-        User userById = this.userService.getUserById(id);
-        ResponseEntity<User> response;
-        if (userById != null) {
-            response = ResponseEntity.ok(userById);
-        } else {
-            response = ResponseEntity.notFound().build();
+        try {
+            User userById = this.userService.getUserById(id);
+            return ResponseEntity.ok(userById);
+        } catch (UserNotFoundException | UsernameNotFoundException e) {
+            return ResponseEntity.notFound().build();
         }
-        return response;
     }
 
     @GetMapping("{id}/post")
     public List<Post> getUserPosts(@PathVariable Long id) {
-        List<Post> userPosts = this.postService.getPostsForUserById(id);
-        return userPosts;
+        return this.postService.getPostsForUserById(id);
     }
 
     @PutMapping("{id}")
-    public void updateUser(@PathVariable("id") Long id, @RequestBody User user) {
-        this.userService.updateUser(id, user.getLogin(), user.getPassword(), user.getRole(), user.getAvatarUrl(),
-                user.getName(), user.getAbout(), user.getPostCount());
+    public ResponseEntity<String> updateUser(@PathVariable("id") Long id, @RequestBody User user)  {
+        try {
+            this.userService.updateUser(id, user.getLogin(), user.getPassword(), user.getRole(), user.getAvatarUrl(),
+                    user.getName(), user.getAbout(), user.getPostCount());
+            return ResponseEntity.ok().build();
+        } catch (UserLoginTakenException | UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+        }
     }
 }

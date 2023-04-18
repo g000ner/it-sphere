@@ -1,5 +1,6 @@
 package edu.itsphere.back.post;
 
+import edu.itsphere.back.exception.UserNotFoundException;
 import edu.itsphere.back.post.postComment.PostComment;
 import edu.itsphere.back.post.postComment.PostCommentService;
 import edu.itsphere.back.user.User;
@@ -40,7 +41,7 @@ public class PostController {
     }
 
     @PostMapping
-    public void savePost(@RequestBody Post post) {
+    public void savePost(@RequestBody Post post) throws UserNotFoundException {
         User author = this.userService.getUserById(post.getAuthorId());
         post.setAuthor(author);
         this.postService.savePost(post);
@@ -52,7 +53,7 @@ public class PostController {
     }
 
     @PostMapping("{id}/comment")
-    public void setCommentToPost(@PathVariable("id") Long postId, @RequestBody PostComment comment) {
+    public void setCommentToPost(@PathVariable("id") Long postId, @RequestBody PostComment comment) throws UserNotFoundException {
         this.postService.setCommentToPost(postId, comment);
     }
 

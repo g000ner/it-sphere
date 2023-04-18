@@ -1,5 +1,7 @@
 package edu.itsphere.back.user;
 
+import edu.itsphere.back.exception.UserLoginTakenException;
+import edu.itsphere.back.exception.UserNotFoundException;
 import edu.itsphere.back.user.fake.FakeUserRepository;
 import edu.itsphere.back.user.registration.token.ConfirmationToken;
 import edu.itsphere.back.user.registration.token.ConfirmationTokenService;
@@ -19,6 +21,7 @@ import java.util.UUID;
 @Service
 public class UserService implements UserDetailsService {
     private static final String USER_NOT_FOUND_BY_LOGIN_MSG = "user with login %s not found";
+    private static final String USER_NOT_FOUND_BY_ID_MSG = "user with id %s not found";
 
     @Autowired
     UserRepository userRepository;
@@ -52,24 +55,20 @@ public class UserService implements UserDetailsService {
         }
     }
 
-    public User getUserById(Long id) {
+    public User getUserById(Long id) throws UserNotFoundException {
         Optional<User> userOptional = this.userRepository.findById(id);
-        if (userOptional.isPresent()) {
-            return userOptional.get();
-        } else {
-            return null;
-        }
+        return userOptional.orElseThrow(() -> new UserNotFoundException(String.format(USER_NOT_FOUND_BY_ID_MSG, id)));
     }
 
     @Transactional
     public void updateUser(Long id, String newLogin, String newPassword,
-                           UserRole newRole, String newAvatarUrl, String newName, String newAbout, Integer newPostCount) {
-        User user = this.userRepository.findById(id).orElseThrow(() -> new IllegalStateException(
+                           UserRole newRole, String newAvatarUrl, String newName, String newAbout, Integer newPostCount) throws UserLoginTakenException, UserNotFoundException {
+        User user = this.userRepository.findById(id).orElseThrow(() -> new UserNotFoundException(
                 "user with id " + id + " does not exists"));
 
         Optional<User> userByLoginOptional = this.userRepository.findByLogin(newLogin);
         if (userByLoginOptional.isPresent()) {
-            throw new IllegalStateException("login taken");
+            throw new UserLoginTakenException("login taken");
         }
 
         user.setLogin(newLogin);

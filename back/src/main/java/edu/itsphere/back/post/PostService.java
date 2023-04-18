@@ -1,5 +1,6 @@
 package edu.itsphere.back.post;
 
+import edu.itsphere.back.exception.UserNotFoundException;
 import edu.itsphere.back.post.postComment.PostComment;
 import edu.itsphere.back.post.postComment.PostCommentService;
 import edu.itsphere.back.user.User;
@@ -52,7 +53,7 @@ public class PostService {
         this.postRepository.changePostStatus(postId, newStatus);
     }
 
-    public void setCommentToPost(Long postId, PostComment comment) {
+    public void setCommentToPost(Long postId, PostComment comment) throws UserNotFoundException {
         Post postToBeCommented;
         Optional<Post> optionalPostToBeCommented = this.postRepository.findById(postId);
         if (optionalPostToBeCommented.isEmpty()) {
