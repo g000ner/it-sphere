@@ -1,18 +1,21 @@
 import { HeartOutlined, MessageOutlined } from "@ant-design/icons";
 import style from "./style.module.scss";
 import avatar from "./avatar.png";
+import { Link } from "react-router-dom";
 
 export const Card = () => {
   return (
     <li className={style.CardBox}>
       <div className={style.Card}>
         <div className={style.Start}>
-          <div className={style.Author}>
-            <div className={style.imgBox}>
-              <img className={style.Avatar} src={avatar}></img>
+          <Link to="/user" className={style.Link}>
+            <div className={style.Author}>
+              <div className={style.imgBox}>
+                <img className={style.Avatar} src={avatar}></img>
+              </div>
+              <div className={style.Name}>Иван Иванов</div>
             </div>
-            <div className={style.Name}>Иван Иванов</div>
-          </div>
+          </Link>
           <div className={style.Date}> 2 часа назад </div>
         </div>
         <div className={style.Label}>
@@ -28,10 +31,12 @@ export const Card = () => {
           раскладка, иначе, команды будут совсем другие.
         </div>
         <div className={style.End}>
-          <button className={style.ReadMore}>
-            {" "}
-            <u>Читать далее </u>{" "}
-          </button>
+          <Link to="/post">
+            <button className={style.ReadMore}>
+              {" "}
+              <u>Читать далее </u>{" "}
+            </button>
+          </Link>
           <div className={style.Reaction}>
             <button className={style.Like}>
               <HeartOutlined />

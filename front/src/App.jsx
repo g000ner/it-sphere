@@ -8,12 +8,12 @@ import Entry from "./pages/ entry";
 import PostPage from "./pages/post";
 import Profile from "./pages/profile";
 import NewPost from "./pages/new-post";
+import UserPage from "./pages/user";
 
 function App() {
   return (
     <div>
       <div className={style.Container}>
-        <Header />
         <Router>
           <Routes>
             <Route exact path="/" element={<Layout />} />
@@ -22,6 +22,7 @@ function App() {
             <Route exact path="/post" element={<PostPage />} />
             <Route exact path="/profile" element={<Profile />} />
             <Route exact path="/new-post" element={<NewPost/>} />
+            <Route exact path="/user" element={<UserPage/>} />
           </Routes>
         </Router>
       </div>

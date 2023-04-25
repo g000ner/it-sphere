@@ -4,7 +4,7 @@
   margin-top: 20px;
 
   .searchBarBar {
-    background-color: #fff;
+    background-color: var(--color-light);
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
 
@@ -44,13 +44,13 @@
 .searchBarBar svg {
   width: 20px;
   height: 20px;
-  color: #0000007a;
+  color: var(--color-dark-gray);
 }
 
 .searchBarBar svg:hover {
-  color: black;
+  color: var(--color-dark);
 }
 
 .searchBarBar svg:active {
-  color: #0000007a;
+  color: var(--color-dark-gray);
 }

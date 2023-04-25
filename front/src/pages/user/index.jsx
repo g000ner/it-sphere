@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 import { Header } from "../../component/header";
 
-const Profile = () => {
+const UserPage = () => {
   return (
     <div>
       <Header />
@@ -24,22 +24,18 @@ const Profile = () => {
                 <div className={style.Name}>@ivanovIvan</div>
                 <div className={style.JobTitle}>Разработчик python</div>
               </div>
-              <div className={style.Status}>Autor</div>
-            </div>
-            <div className={style.EditIcon}>
-              <EditOutlined />
             </div>
           </div>
           <div className={style.MenuBox}>
             <div className={style.Menu}>
               <div className={style.TitleMenu}>ПУБЛИКАЦИИ</div>
-              <div className={style.TitleMenu}>НА ПРОВЕРКЕ</div>
-              <div className={style.TitleMenu}>ОТКЛОНЕНЫ</div>
             </div>
             <div className={style.Content}>
-              <div className={style.NamePost}>
-                10 полезных сочетаний клавиш в PyCharm
-              </div>
+              <Link to="/post" className={style.Link}>
+                  <div className={style.NamePost}>
+                    10 полезных сочетаний клавиш в PyCharm
+                  </div>
+              </Link>
               <div className={style.Reaction}>
                 <button className={style.Like}>
                   <HeartOutlined />
@@ -51,28 +47,6 @@ const Profile = () => {
                 </button>
               </div>
             </div>
-            <Link to="/new-post">
-              <button className={style.WritePost}>Написать пост</button>
-            </Link>
-          </div>
-        </div>
-        <div className={style.InfoBox}>
-          <div className={style.Info}>
-            <h1 className={style.Title}>
-              <u>ИНФОРМАЦИЯ</u>
-            </h1>
-            <div className={style.InfoBlock}>
-              <h2 className={style.Headline}>Опубликовано</h2>
-              <div className={style.CountPost}>10 cтатей</div>
-            </div>
-            <div className={style.InfoBlock}>
-              <h2 className={style.Headline}>На рассмотрении</h2>
-              <div className={style.CountPost}>10 cтатей</div>
-            </div>
-            <div className={style.InfoBlock}>
-              <h2 className={style.Headline}>Отклонено</h2>
-              <div className={style.CountPost}>10 cтатей</div>
-            </div>
           </div>
         </div>
       </div>
@@ -80,4 +54,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default UserPage;

@@ -3,7 +3,7 @@
   justify-content: center;
 
   .Card {
-    background-color: #fff;
+    background-color: var(--color-light);
     width: 540px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 8px;
@@ -17,6 +17,13 @@
   justify-content: space-between;
   margin-top: 12px;
 
+  .Link{
+    text-decoration: none;
+    color: var(--color-dark);
+  }
+  .Link :hover{
+    color: var(--color-dark-blue);
+  }
   .Author {
     display: flex;
     align-items: center;
@@ -44,15 +51,13 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #5c5c5c;
+    color: var(--color-dark-gray);
 
     margin-right: 30px;
   }
 }
 
 .Label {
-  font-family: "Roboto";
-  font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 19px;
@@ -60,9 +65,6 @@
   margin: 16px 8px 8px 30px;
 }
 .Text {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
   font-size: 16px;
   line-height: 19px;
 
@@ -75,36 +77,33 @@
 
   .ReadMore {
     cursor: pointer;
-    background-color: #fff;
+    background-color: var(--color-light);
   }
   .ReadMore:hover {
-    color: #0f4da8;
+    color: var(--color-dark-blue);
   }
   .Reaction {
     display: flex;
   }
   .Reaction button {
     cursor: pointer;
-    background-color: #fff;
+    background-color: var(--color-light);
   }
 
   .Reaction svg {
     width: 20px;
     height: 20px;
-    color: #000;
+    color: var(--color-dark);
   }
 
   .Reaction svg:hover {
-    color: #0f4da8;
+    color: var(--color-dark-blue);
   }
 
   .Like {
     display: flex;
     margin-right: 8px;
     .LikeCount {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 400;
       font-size: 16px;
       line-height: 19px;
       margin-left: 2px;
@@ -114,9 +113,6 @@
   .Comment {
     display: flex;
     .CommentCount {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 400;
       font-size: 16px;
       line-height: 19px;
       margin-left: 2px;

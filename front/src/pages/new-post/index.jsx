@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
+import { Header } from "../../component/header";
 import style from "./style.module.scss";
 
 const NewPost = () => {
   return (
     <div className={style.NewPostBox}>
+      <Header />
       <div className={style.NewPost}>
         <form className={style.Form}>
           <div className={style.Title}>

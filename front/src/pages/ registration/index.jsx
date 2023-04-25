@@ -1,8 +1,11 @@
 import style from "./style.module.scss";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { Header } from "../../component/header";
 
 const Registration = () => {
   return (
+    <div>
+      <Header />
     <div className={style.RegistrationBox}>
       <div className={style.Registration}>
         <h1 className={style.Title}>Регистрация</h1>
@@ -51,6 +54,7 @@ const Registration = () => {
           </Link>
         </div>
       </div>
+    </div>
     </div>
   );
 };
